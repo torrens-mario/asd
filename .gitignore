@@ -1,0 +1,71 @@
+# ===== PYTHON =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ===== ENTORNOS VIRTUALES =====
+venv/
+env/
+ENV/
+.venv
+
+# ===== SECRETOS Y CONFIGURACIÓN =====
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.crt
+!requirements.txt
+
+# ===== LOGS =====
+logs/
+*.log
+
+# ===== BASE DE DATOS =====
+*.db
+*.sqlite
+*.sqlite3
+database/data.db
+
+# ===== DOCKER =====
+docker-compose.override.yml
+
+# ===== IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ===== SISTEMA OPERATIVO =====
+.DS_Store
+Thumbs.db
+
+# ===== REPORTES DE SEGURIDAD =====
+reports/
+bandit_report.txt
+semgrep_report.json
+
+# ===== CERTIFICADOS =====
+frontend/certs/*.pem
+agriculture-iot/nginx_certs/*.pem
+agriculture-iot/nginx_certs/*.key
+agriculture-iot/nginx_certs/*.crt

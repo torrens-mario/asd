@@ -1,0 +1,67 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Docker
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# Logs y reportes
+logs/
+reports/
+*.log
+
+# Database
+database/*.db
+*.sqlite
+*.sqlite3
+
+# Documentación
+README.md
+docs/
+*.md
+
+# Tests
+tests/
+test_*.py
+*_test.py
+pytest.ini
+.pytest_cache/
+
+# Secrets (nunca copiar al contenedor)
+.env
+.env.local
+*.pem
+*.key
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporales
+tmp/
+temp/
+*.tmp
