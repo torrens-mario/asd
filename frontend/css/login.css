@@ -1,0 +1,45 @@
+/**
+ * Estilos específicos para la página de login
+ */
+
+.login-card {
+    animation-delay: 0.2s;
+}
+
+#login-form {
+    animation: fadeIn 0.8s ease;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
+}
+
+/* Animación del botón de login */
+.btn-primary:hover {
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Fondo adicional para login */
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

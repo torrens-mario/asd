@@ -1,0 +1,550 @@
+2025-12-16 20:12:33 - root - INFO - Logging configurado correctamente
+2025-12-16 20:13:58 - root - INFO - Logging configurado correctamente
+2025-12-16 20:13:58 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 20:13:58 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 20:13:58 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 20:13:58 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 20:14:39 - app.main - WARNING - Error HTTP 404 en /favicon.ico: Not Found
+2025-12-16 20:14:39 - app.main - WARNING - Error HTTP 404 en /favicon.ico: Not Found
+2025-12-16 20:17:49 - app.main - WARNING - Error HTTP 404 en /: Not Found
+2025-12-16 20:17:50 - app.main - WARNING - Error HTTP 404 en /favicon.ico: Not Found
+2025-12-16 20:18:12 - app.main - WARNING - Error HTTP 404 en /: Not Found
+2025-12-16 20:18:12 - app.main - WARNING - Error HTTP 404 en /favicon.ico: Not Found
+2025-12-16 20:18:17 - app.main - WARNING - Error HTTP 404 en /register: Not Found
+2025-12-16 20:18:17 - app.main - WARNING - Error HTTP 404 en /favicon.ico: Not Found
+2025-12-16 20:18:32 - app.main - WARNING - Error HTTP 404 en /index: Not Found
+2025-12-16 20:18:33 - app.main - WARNING - Error HTTP 404 en /favicon.ico: Not Found
+2025-12-16 20:18:36 - app.main - WARNING - Error HTTP 404 en /index.html: Not Found
+2025-12-16 20:18:36 - app.main - WARNING - Error HTTP 404 en /favicon.ico: Not Found
+2025-12-16 20:18:42 - app.main - WARNING - Error HTTP 404 en /register.html: Not Found
+2025-12-16 20:18:43 - app.main - WARNING - Error HTTP 404 en /favicon.ico: Not Found
+2025-12-16 20:21:25 - app.routers.auth.auth - INFO - Nuevo usuario registrado: asdadsg (ID: 2)
+2025-12-16 20:21:25 - app.main - ERROR - Error inesperado en POST /auth/register: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'role'), 'msg': 'Field required', 'input': User(is_active=True, email='asdadsg@gmail.com', username='asdadsg', id=2, hashed_password='$argon2id$v=19$m=65536,t=2,p=4$sR3dI+vWGWHaXLhbrpec2g$h+UUWypefNpjIGh5ltnlcL2v7biPHo6w5u8FsMN7yrA', created_at=datetime.datetime(2025, 12, 16, 19, 21, 25, 394182))}
+Traceback (most recent call last):
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\fastapi\routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\fastapi\routing.py", line 155, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'role'), 'msg': 'Field required', 'input': User(is_active=True, email='asdadsg@gmail.com', username='asdadsg', id=2, hashed_password='$argon2id$v=19$m=65536,t=2,p=4$sR3dI+vWGWHaXLhbrpec2g$h+UUWypefNpjIGh5ltnlcL2v7biPHo6w5u8FsMN7yrA', created_at=datetime.datetime(2025, 12, 16, 19, 21, 25, 394182))}
+
+2025-12-16 20:26:31 - root - INFO - Logging configurado correctamente
+2025-12-16 20:26:31 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 20:26:31 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 20:26:31 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 20:26:31 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 20:27:02 - app.routers.auth.auth - WARNING - Intento de registro con nombre de usuario existente: asdadsg
+2025-12-16 20:27:02 - app.main - WARNING - Error HTTP 400 en /auth/register: Nombre de usuario ya registrado
+2025-12-16 20:29:04 - app.main - ERROR - Error inesperado en POST /auth/login: 'User' object has no attribute 'role'
+Traceback (most recent call last):
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\fastapi\routing.py", line 193, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\concurrency.py", line 42, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\anyio\to_thread.py", line 61, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2525, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\app\routers\auth\auth.py", line 122, in login
+    token_data = {"sub": user.username, "role": user.role}
+                                                ^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\pydantic\main.py", line 828, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'User' object has no attribute 'role'
+2025-12-16 20:34:39 - root - INFO - Logging configurado correctamente
+2025-12-16 20:34:39 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 20:34:39 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 20:34:39 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 20:34:39 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 20:36:24 - root - INFO - Logging configurado correctamente
+2025-12-16 20:36:24 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 20:36:24 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 20:36:24 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 20:36:24 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 20:40:31 - root - INFO - Logging configurado correctamente
+2025-12-16 20:40:31 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 20:40:31 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 20:40:31 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 20:40:31 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 20:42:29 - root - INFO - Logging configurado correctamente
+2025-12-16 20:42:29 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 20:42:29 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 20:42:29 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 20:42:29 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 20:44:03 - app.routers.auth.auth - INFO - Nuevo usuario registrado: admin_test (ID: 1)
+2025-12-16 20:44:03 - app.main - ERROR - Error inesperado en POST /auth/register: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'role'), 'msg': 'Field required', 'input': User(email='admin@test.com', is_active=True, username='admin_test', id=1, hashed_password='$argon2id$v=19$m=65536,t=2,p=4$XSbOoHDvRBQeYM3y4mpMkw$rdKlrcnw0bMDeRh/QyMXDMohxtIzFIfjCLeqceUZGFg', created_at=datetime.datetime(2025, 12, 16, 19, 44, 3, 934245))}
+Traceback (most recent call last):
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\fastapi\routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\fastapi\routing.py", line 155, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'role'), 'msg': 'Field required', 'input': User(email='admin@test.com', is_active=True, username='admin_test', id=1, hashed_password='$argon2id$v=19$m=65536,t=2,p=4$XSbOoHDvRBQeYM3y4mpMkw$rdKlrcnw0bMDeRh/QyMXDMohxtIzFIfjCLeqceUZGFg', created_at=datetime.datetime(2025, 12, 16, 19, 44, 3, 934245))}
+
+2025-12-16 20:47:41 - root - INFO - Logging configurado correctamente
+2025-12-16 20:47:41 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 20:47:41 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 20:47:41 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 20:47:41 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 20:48:23 - app.main - ERROR - Error inesperado en POST /auth/register: (sqlite3.OperationalError) no such column: user.role
+[SQL: SELECT user.id, user.username, user.email, user.hashed_password, user.is_active, user.created_at, user.role 
+FROM user 
+WHERE user.username = ?]
+[parameters: ('admin2_test',)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: user.role
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\fastapi\routing.py", line 193, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\concurrency.py", line 42, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\anyio\to_thread.py", line 61, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2525, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\app\routers\auth\auth.py", line 40, in register
+    existing_user = session.exec(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\sqlmodel\orm\session.py", line 66, in exec
+    results = super().execute(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2249, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: user.role
+[SQL: SELECT user.id, user.username, user.email, user.hashed_password, user.is_active, user.created_at, user.role 
+FROM user 
+WHERE user.username = ?]
+[parameters: ('admin2_test',)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-12-16 20:50:05 - root - INFO - Logging configurado correctamente
+2025-12-16 20:50:05 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 20:50:05 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 20:50:05 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 20:50:05 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 20:50:23 - root - INFO - Logging configurado correctamente
+2025-12-16 20:50:23 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 20:50:23 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 20:50:23 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 20:50:23 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 20:51:00 - app.routers.auth.auth - INFO - Nuevo usuario registrado: admin_test (ID: 1)
+2025-12-16 20:52:04 - app.routers.auth.auth - INFO - Usuario logueado exitosamente: admin_test (role: user)
+2025-12-16 20:52:04 - app.main - ERROR - Error inesperado en POST /auth/login: 1 validation error for TokenPair
+token_type
+  Field required [type=missing, input_value={'access_token': 'eyJhbGc...Zj0D-1NQ1dwlD3zohukDF0'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.8/v/missing
+Traceback (most recent call last):
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\fastapi\routing.py", line 193, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\starlette\concurrency.py", line 42, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\anyio\to_thread.py", line 61, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2525, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\app\routers\auth\auth.py", line 131, in login
+    return TokenPair(access_token=access_token, refresh_token=refresh_token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Trabajo_API-rama-mario\venv\Lib\site-packages\pydantic\main.py", line 193, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for TokenPair
+token_type
+  Field required [type=missing, input_value={'access_token': 'eyJhbGc...Zj0D-1NQ1dwlD3zohukDF0'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.8/v/missing
+2025-12-16 20:54:18 - root - INFO - Logging configurado correctamente
+2025-12-16 20:54:18 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 20:54:18 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 20:54:18 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 20:54:18 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 20:54:39 - app.routers.auth.auth - INFO - Usuario logueado exitosamente: admin_test (role: user)
+2025-12-16 20:58:10 - app.routers.auth.auth - INFO - Usuario logueado exitosamente: admin_test (role: user)
+2025-12-16 20:59:00 - app.main - WARNING - Error HTTP 401 en /users/: Tipo de token inválido
+2025-12-16 21:04:44 - root - INFO - Logging configurado correctamente
+2025-12-16 21:04:44 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 21:04:44 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 21:04:44 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 21:04:44 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 21:05:15 - app.routers.auth.auth - INFO - Usuario logueado exitosamente: admin_test (role: user)
+2025-12-16 21:05:27 - app.routers.auth.auth - INFO - Usuario logueado exitosamente: admin_test (role: user)
+2025-12-16 21:05:33 - app.core.security - WARNING - El usuario admin_test intentó realizar una acción de administrador sin privilegios
+2025-12-16 21:05:33 - app.main - WARNING - Error HTTP 403 en /users/: Privilegios de administrador requeridos
+2025-12-16 21:06:48 - root - INFO - Logging configurado correctamente
+2025-12-16 21:06:48 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 21:06:48 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 21:06:48 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 21:06:48 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 21:06:54 - root - INFO - Logging configurado correctamente
+2025-12-16 21:06:54 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 21:06:54 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 21:06:54 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 21:06:54 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 21:07:28 - root - INFO - Logging configurado correctamente
+2025-12-16 21:07:28 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 21:07:28 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 21:07:28 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 21:07:28 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 21:07:36 - root - INFO - Logging configurado correctamente
+2025-12-16 21:07:36 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 21:07:36 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 21:07:36 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 21:07:36 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 21:08:09 - app.routers.auth.auth - INFO - Nuevo usuario registrado: superjefe (ID: 2)
+2025-12-16 21:08:24 - app.routers.auth.auth - INFO - Usuario logueado exitosamente: superjefe (role: admin)
+2025-12-16 21:08:45 - app.routers.auth.auth - INFO - Usuario logueado exitosamente: superjefe (role: admin)
+2025-12-16 21:08:59 - app.routers.users.users - INFO - Admin superjefe listed 2 users.
+2025-12-16 21:09:40 - root - INFO - Logging configurado correctamente
+2025-12-16 21:09:40 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 21:09:40 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 21:09:40 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 21:09:40 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 21:10:50 - root - INFO - Logging configurado correctamente
+2025-12-16 21:10:50 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 21:10:50 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 21:10:50 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 21:10:50 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 21:14:17 - root - INFO - Logging configurado correctamente
+2025-12-16 21:14:17 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 21:14:17 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 21:14:17 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 21:14:17 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 21:19:22 - root - INFO - Logging configurado correctamente
+2025-12-16 21:19:22 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 21:19:22 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 21:19:22 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 21:19:22 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 21:19:24 - root - INFO - Logging configurado correctamente
+2025-12-16 21:19:24 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 21:19:24 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 21:19:24 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 21:19:24 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 21:19:52 - app.routers.auth.auth - INFO - Usuario logueado exitosamente: superjefe (role: admin)
+2025-12-16 21:19:54 - app.main - WARNING - Error HTTP 404 en /assets/: Not Found
+2025-12-16 21:22:52 - app.main - WARNING - Error HTTP 404 en /assets/stats: Not Found
+2025-12-16 21:22:54 - app.routers.users.users - INFO - Admin superjefe listed 2 users.
+2025-12-16 21:23:01 - app.main - WARNING - Error HTTP 404 en /assets/: Not Found
+2025-12-16 21:25:39 - root - INFO - Logging configurado correctamente
+2025-12-16 21:25:39 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 21:25:39 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 21:25:39 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 21:25:39 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 21:26:44 - root - INFO - Logging configurado correctamente
+2025-12-16 21:26:44 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 21:26:44 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 21:26:44 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 21:26:44 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 21:28:35 - app.core.security - ERROR - Error al decodificar JWT: Signature verification failed.
+2025-12-16 21:28:35 - app.main - WARNING - Error HTTP 401 en /auth/me: No se pudieron validar las credenciales
+2025-12-16 21:28:36 - app.core.security - ERROR - Error al decodificar JWT: Signature verification failed.
+2025-12-16 21:28:36 - app.main - WARNING - Error HTTP 401 en /auth/logout: No se pudieron validar las credenciales
+2025-12-16 21:28:36 - app.main - WARNING - Error HTTP 404 en /assets/: Not Found
+2025-12-16 21:28:36 - app.core.security - ERROR - Error al decodificar JWT: Signature verification failed.
+2025-12-16 21:28:36 - app.main - WARNING - Error HTTP 401 en /auth/logout: No se pudieron validar las credenciales
+2025-12-16 21:28:43 - app.routers.auth.auth - INFO - Usuario logueado exitosamente: superjefe (role: admin)
+2025-12-16 21:28:45 - app.main - WARNING - Error HTTP 404 en /assets/: Not Found
+2025-12-16 21:30:37 - root - INFO - Logging configurado correctamente
+2025-12-16 21:30:37 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-16 21:30:37 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-16 21:30:37 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-16 21:30:37 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-16 21:31:42 - app.core.security - ERROR - Error al decodificar JWT: Signature verification failed.
+2025-12-16 21:31:42 - app.main - WARNING - Error HTTP 401 en /auth/me: No se pudieron validar las credenciales
+2025-12-16 21:31:42 - app.core.security - ERROR - Error al decodificar JWT: Signature verification failed.
+2025-12-16 21:31:42 - app.main - WARNING - Error HTTP 401 en /auth/logout: No se pudieron validar las credenciales
+2025-12-16 21:31:42 - app.core.security - ERROR - Error al decodificar JWT: Signature verification failed.
+2025-12-16 21:31:42 - app.main - WARNING - Error HTTP 401 en /assets/: No se pudieron validar las credenciales
+2025-12-16 21:31:50 - app.routers.auth.auth - WARNING - Fallo de login para usuario: superjefe
+2025-12-16 21:31:50 - app.main - WARNING - Error HTTP 401 en /auth/login: Credenciales inválidas
+2025-12-16 21:31:57 - app.routers.auth.auth - INFO - Usuario logueado exitosamente: superjefe (role: admin)
+2025-12-16 21:31:59 - app.routers.assets.assets - INFO - User superjefe listed 0 assets
+2025-12-16 21:32:41 - app.routers.users.users - INFO - Admin superjefe listed 2 users.
+2025-12-16 21:32:43 - app.routers.users.users - INFO - Admin superjefe listed 2 users.
+2025-12-16 21:32:47 - app.routers.users.users - INFO - Admin superjefe listed 2 users.
+2025-12-16 21:32:52 - app.routers.assets.assets - INFO - User superjefe listed 0 assets
+2025-12-16 21:34:09 - app.routers.assets.assets - INFO - User superjefe listed 0 assets
+2025-12-16 21:34:13 - app.routers.assets.assets - INFO - User superjefe listed 0 assets
+2025-12-16 21:34:16 - app.routers.assets.assets - INFO - User superjefe listed 0 assets
+2025-12-16 21:34:21 - app.routers.auth.auth - INFO - Usuario superjefe ha cerrado sesión
+2025-12-16 21:34:21 - app.routers.auth.auth - INFO - Usuario superjefe ha cerrado sesión
+2025-12-16 21:34:50 - app.routers.auth.auth - INFO - Usuario logueado exitosamente: superjefe (role: admin)
+2025-12-16 21:34:52 - app.routers.assets.assets - INFO - User superjefe listed 0 assets
+2025-12-16 21:34:58 - app.routers.assets.assets - INFO - User superjefe listed 0 assets
+2025-12-16 21:37:51 - app.routers.auth.auth - INFO - Usuario superjefe ha cerrado sesión
+2025-12-16 21:37:51 - app.routers.auth.auth - INFO - Usuario superjefe ha cerrado sesión
+2025-12-16 21:38:08 - app.routers.auth.auth - WARNING - Fallo de login para usuario: superjefe
+2025-12-16 21:38:08 - app.main - WARNING - Error HTTP 401 en /auth/login: Credenciales inválidas
+2025-12-16 21:38:14 - app.routers.auth.auth - INFO - Usuario logueado exitosamente: superjefe (role: admin)
+2025-12-16 21:38:16 - app.routers.assets.assets - INFO - User superjefe listed 0 assets
+2025-12-16 21:39:03 - app.routers.auth.auth - INFO - Usuario logueado exitosamente: superjefe (role: admin)
+2025-12-16 21:40:57 - app.main - WARNING - Error de validación en POST /assets/: [{'type': 'enum', 'loc': ('body', 'asset_type'), 'msg': "Input should be 'server', 'workstation', 'network_device', 'application', 'database' or 'mobile_device'", 'input': 'Portátil', 'ctx': {'expected': "'server', 'workstation', 'network_device', 'application', 'database' or 'mobile_device'"}}]
+2025-12-16 21:42:28 - app.routers.assets.assets - INFO - Admin superjefe created asset 1: Portátil Dell
+2025-12-16 21:43:42 - app.main - WARNING - Error HTTP 404 en /assets/: Owner user with ID 234 not found
+2025-12-16 21:43:50 - app.routers.assets.assets - INFO - Admin superjefe created asset 2: Servidor
+2025-12-16 21:44:09 - app.routers.assets.assets - INFO - Admin superjefe created asset 3: Servidor
+2025-12-16 21:44:27 - app.routers.assets.assets - INFO - User superjefe listed 3 assets
+2025-12-16 21:44:34 - app.routers.assets.assets - WARNING - Admin superjefe deleted asset 3: Servidor
+2025-12-16 21:44:34 - app.routers.assets.assets - INFO - User superjefe listed 2 assets
+2025-12-17 12:26:00 - root - INFO - Logging configurado correctamente
+2025-12-17 12:26:00 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-17 12:26:00 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-17 12:26:00 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-17 12:26:00 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-17 12:29:35 - root - INFO - Logging configurado correctamente
+2025-12-17 12:29:35 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-17 12:29:35 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-17 12:29:35 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-17 12:29:35 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-17 12:29:50 - app.routers.auth.auth - WARNING - Fallo de login para usuario: superjefe
+2025-12-17 12:29:50 - app.main - WARNING - Error HTTP 401 en /auth/login: Credenciales inválidas
+2025-12-17 12:29:57 - app.routers.auth.auth - WARNING - Fallo de login para usuario: superjefe
+2025-12-17 12:29:57 - app.main - WARNING - Error HTTP 401 en /auth/login: Credenciales inválidas
+2025-12-17 15:16:44 - root - INFO - Logging configurado correctamente
+2025-12-17 15:16:44 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-17 15:16:44 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-17 15:16:44 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-17 15:16:44 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-17 15:29:06 - root - INFO - Logging configurado correctamente
+2025-12-17 15:29:06 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-17 15:29:06 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-17 15:29:06 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-17 15:29:06 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-17 15:29:45 - app.main - WARNING - Error HTTP 404 en /: Not Found
+2025-12-17 15:29:46 - app.main - WARNING - Error HTTP 404 en /favicon.ico: Not Found
+2025-12-17 15:29:54 - app.main - WARNING - Error HTTP 404 en /: Not Found
+2025-12-17 15:31:52 - root - INFO - Logging configurado correctamente
+2025-12-17 15:31:53 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-17 15:31:53 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-17 15:31:53 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-17 15:31:53 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-17 15:33:02 - root - INFO - Logging configurado correctamente
+2025-12-17 15:33:02 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-17 15:33:02 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-17 15:33:02 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-17 15:33:02 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-17 15:33:12 - app.main - WARNING - Error HTTP 404 en /: Not Found
+2025-12-17 15:33:12 - app.main - WARNING - Error HTTP 404 en /favicon.ico: Not Found
+2025-12-17 15:36:43 - root - INFO - Logging configurado correctamente
+2025-12-17 15:36:43 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-17 15:36:43 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-17 15:36:43 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-17 15:36:43 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-17 15:36:48 - app.main - WARNING - Error HTTP 404 en /: Not Found
+2025-12-17 15:36:48 - app.main - WARNING - Error HTTP 404 en /favicon.ico: Not Found
+2025-12-17 15:37:14 - app.main - WARNING - Error HTTP 404 en /: Not Found
+2025-12-17 15:37:14 - app.main - WARNING - Error HTTP 404 en /favicon.ico: Not Found
+2025-12-17 15:50:08 - app.main - WARNING - Error HTTP 404 en /: Not Found
+2025-12-17 15:50:08 - app.main - WARNING - Error HTTP 404 en /favicon.ico: Not Found
+2025-12-17 15:51:25 - app.main - WARNING - Error HTTP 404 en /index.html: Not Found
+2025-12-17 15:51:25 - app.main - WARNING - Error HTTP 404 en /favicon.ico: Not Found
+2025-12-17 15:51:28 - app.main - WARNING - Error HTTP 404 en /favicon.ico: Not Found
+2025-12-17 15:52:48 - app.main - WARNING - Error HTTP 404 en /: Not Found
+2025-12-17 15:52:49 - app.main - WARNING - Error HTTP 404 en /favicon.ico: Not Found
+2025-12-17 15:53:38 - app.main - WARNING - Error de validación en POST /auth/register: [{'type': 'value_error', 'loc': ('body', 'username'), 'msg': 'Value error, Nombre de usuario no permitido.', 'input': 'admin', 'ctx': {'error': ValueError('Nombre de usuario no permitido.')}}]
+2025-12-17 15:53:58 - app.routers.auth.auth - INFO - Nuevo usuario registrado: admin_test (ID: 1)
+2025-12-17 15:54:32 - app.routers.auth.auth - INFO - Usuario logueado exitosamente: admin_test (role: user)
+2025-12-17 15:54:59 - app.routers.auth.auth - INFO - Usuario logueado exitosamente: admin_test (role: user)
+2025-12-17 15:56:02 - app.core.security - WARNING - El usuario admin_test intentó realizar una acción de administrador sin privilegios
+2025-12-17 15:56:02 - app.main - WARNING - Error HTTP 403 en /assets/: Privilegios de administrador requeridos
+2025-12-17 16:01:17 - app.routers.auth.auth - INFO - Nuevo usuario registrado: superjefe (ID: 2)
+2025-12-17 16:01:28 - app.routers.auth.auth - INFO - Usuario logueado exitosamente: superjefe (role: user)
+2025-12-17 16:01:47 - app.routers.auth.auth - INFO - Usuario logueado exitosamente: superjefe (role: user)
+2025-12-17 16:01:55 - app.core.security - WARNING - El usuario superjefe intentó realizar una acción de administrador sin privilegios
+2025-12-17 16:01:55 - app.main - WARNING - Error HTTP 403 en /assets/: Privilegios de administrador requeridos
+2025-12-17 16:03:18 - app.routers.auth.auth - INFO - Nuevo usuario registrado: superjefe1 (ID: 3)
+2025-12-17 16:03:32 - app.routers.auth.auth - INFO - Usuario logueado exitosamente: superjefe1 (role: user)
+2025-12-17 16:03:37 - app.core.security - WARNING - El usuario superjefe1 intentó realizar una acción de administrador sin privilegios
+2025-12-17 16:03:37 - app.main - WARNING - Error HTTP 403 en /assets/: Privilegios de administrador requeridos
+2025-12-17 18:04:14 - root - INFO - Logging configurado correctamente
+2025-12-17 18:04:14 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-17 18:04:14 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-17 18:04:14 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-17 18:04:14 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-17 18:18:21 - root - INFO - Logging configurado correctamente
+2025-12-17 18:18:22 - app.main - INFO - Iniciando API de Inventario de Activos...
+2025-12-17 18:18:22 - app.core.database - INFO - Creando tablas de la base de datos...
+2025-12-17 18:18:22 - app.core.database - INFO - Tablas de la base de datos creadas correctamente
+2025-12-17 18:18:22 - app.main - INFO - API preparada para recibir solicitudes
+2025-12-17 18:18:30 - app.main - WARNING - Error HTTP 404 en /: Not Found
+2025-12-17 18:18:30 - app.main - WARNING - Error HTTP 404 en /favicon.ico: Not Found

@@ -1,0 +1,240 @@
+/**
+ * Estilos específicos para gestión de vulnerabilidades
+ */
+
+/* Badges de severidad */
+.badge-severity {
+    color: white;
+    font-weight: 600;
+}
+
+.badge-critical-vuln {
+    background-color: #c53030;
+    animation: pulse 2s infinite;
+}
+
+.badge-high-vuln {
+    background-color: #f56565;
+}
+
+.badge-medium-vuln {
+    background-color: #ed8936;
+}
+
+.badge-low-vuln {
+    background-color: #48bb78;
+}
+
+/* Tabla de vulnerabilidades */
+.vulns-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.vulns-table thead {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.vulns-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.vulns-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.vulns-table tbody tr:hover {
+    background-color: var(--gray-50);
+}
+
+/* CVE ID destacado */
+.cve-id {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: var(--primary-color);
+    background-color: var(--gray-100);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--border-radius-sm);
+    display: inline-block;
+}
+
+/* Descripción de vulnerabilidad */
+.vuln-description {
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Enlaces de vulnerabilidades */
+.vuln-links {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.vuln-link {
+    font-size: 0.75rem;
+    color: var(--info-color);
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--gray-100);
+    border-radius: var(--border-radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.vuln-link:hover {
+    background-color: var(--info-color);
+    color: white;
+}
+
+/* Modal de vincular vulnerabilidad */
+.link-vuln-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--gray-200);
+}
+
+.link-vuln-section h4 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+/* Select de activos */
+.asset-select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--gray-300);
+    border-radius: var(--border-radius-md);
+    font-size: 0.875rem;
+    transition: all var(--transition-fast);
+    background-color: var(--bg-primary);
+}
+
+.asset-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Lista de activos afectados */
+.affected-assets {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.affected-asset-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem;
+    background-color: var(--gray-50);
+    border-radius: var(--border-radius-md);
+    border-left: 3px solid var(--primary-color);
+}
+
+.affected-asset-info {
+    flex: 1;
+}
+
+.affected-asset-name {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.affected-asset-details {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
+/* Botón de desvincular */
+.btn-unlink {
+    background-color: var(--error-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn-unlink:hover {
+    background-color: #e53e3e;
+    transform: translateY(-1px);
+}
+
+/* Estadísticas de vulnerabilidades */
+.vuln-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.vuln-stat-card {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: transform var(--transition-fast);
+}
+
+.vuln-stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.vuln-stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.vuln-stat-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Animación para críticos */
+@keyframes pulse {
+    0%, 100% { 
+        opacity: 1; 
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .vuln-description {
+        max-width: 200px;
+    }
+    
+    .vuln-links {
+        flex-direction: column;
+    }
+    
+    .affected-asset-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}

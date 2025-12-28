@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Registro de usuarios - Sistema de Inventario">
+    <title>Registro - Inventario de Activos IT</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <div class="container">
+        <div class="security-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+        </div>
+        
+        <div class="register-card">
+            <div class="card-header">
+                <h1>Crear Cuenta</h1>
+                <p class="subtitle">Únete al Sistema de Inventario</p>
+            </div>
+            
+            <div class="card-body">
+                <div id="message-container"></div>
+                
+                <form id="register-form" method="POST" action="#">
+                    <div class="form-group">
+                        <label for="username">Usuario</label>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            name="username" 
+                            required 
+                            autocomplete="username"
+                            placeholder="Elige tu nombre de usuario"
+                            minlength="3"
+                            maxlength="50"
+                            pattern="[a-zA-Z0-9_]+"
+                            title="Solo letras, números y guiones bajos"
+                        >
+                        <small class="form-help">3-50 caracteres. Solo letras, números y guiones bajos</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            autocomplete="email"
+                            placeholder="tu@email.com"
+                        >
+                        <small class="form-help">Usaremos este correo para notificaciones</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            required 
+                            autocomplete="new-password"
+                            placeholder="Crea una contraseña segura"
+                            minlength="8"
+                        >
+                        <small class="form-help">Mínimo 8 caracteres, incluye mayúsculas, minúsculas, números y símbolos</small>
+                        
+                        <div class="password-strength" id="password-strength" style="display:none;">
+                            <div class="strength-bar">
+                                <div class="strength-fill" id="strength-fill"></div>
+                            </div>
+                            <span class="strength-text" id="strength-text"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password-confirm">Confirmar Contraseña</label>
+                        <input 
+                            type="password" 
+                            id="password-confirm" 
+                            name="password-confirm" 
+                            required 
+                            autocomplete="new-password"
+                            placeholder="Repite tu contraseña"
+                            minlength="8"
+                        >
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <span class="btn-text">Crear Cuenta</span>
+                        <span class="btn-loader" style="display:none;">Registrando...</span>
+                    </button>
+                </form>
+                
+                <div class="card-footer">
+                    <p>¿Ya tienes una cuenta? <a href="index.html">Inicia sesión</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="security-info">
+            <p>🔒 Tus datos están protegidos | 🛡️ Cifrado con Argon2</p>
+        </div>
+    </div>
+    
+    <script src="js/utils.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

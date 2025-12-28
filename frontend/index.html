@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de Inventario de Activos IT - Inicio de Sesión">
+    <title>Iniciar Sesión - Inventario de Activos IT</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="security-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+        </div>
+        
+        <div class="login-card">
+            <div class="card-header">
+                <h1>Iniciar Sesión</h1>
+                <p class="subtitle">Sistema de Inventario de Activos IT</p>
+            </div>
+            
+            <div class="card-body">
+                <div id="message-container"></div>
+                
+                <form id="login-form" method="POST" action="#">
+                    <div class="form-group">
+                        <label for="username">Usuario</label>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            name="username" 
+                            required 
+                            autocomplete="username"
+                            placeholder="Ingresa tu usuario"
+                            minlength="3"
+                            maxlength="50"
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            required 
+                            autocomplete="current-password"
+                            placeholder="Ingresa tu contraseña"
+                            minlength="8"
+                        >
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <span class="btn-text">Ingresar</span>
+                        <span class="btn-loader" style="display:none;">Ingresando...</span>
+                    </button>
+                </form>
+                
+                <div class="card-footer">
+                    <p>¿No tienes una cuenta? <a href="register.html">Regístrate aquí</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="security-info">
+            <p>🔒 Conexión segura | 🛡️ Protegido por OWASP Top 10</p>
+        </div>
+    </div>
+    
+    <script src="js/utils.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

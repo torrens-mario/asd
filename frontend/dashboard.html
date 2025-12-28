@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Panel de control - Inventario de Activos IT">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Dashboard - Inventario de Activos IT</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/vulnerabilities.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dashboard-body">
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            <span>Inventario de Activos IT</span>
+        </div>
+        
+        <div class="navbar-menu">
+            <div class="navbar-user">
+                <span class="user-name" id="user-name">Usuario</span>
+                <span class="user-role" id="user-role"></span>
+            </div>
+            <button class="btn btn-logout" id="btn-logout">Cerrar Sesión</button>
+        </div>
+    </nav>
+    
+    <!-- Main Container -->
+    <div class="dashboard-container">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Menú Principal</h3>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#activos" class="nav-item active" data-view="activos">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                    <span>Gestión de Activos</span>
+                </a>
+                
+                <a href="#estadisticas" class="nav-item" data-view="estadisticas">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                    <span>Estadísticas</span>
+                </a>
+                
+                <a href="#usuarios" class="nav-item admin-only" data-view="usuarios" style="display:none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    <span>Gestión de Usuarios</span>
+                </a>
+
+                <a href="#vulnerabilidades" class="nav-item admin-only" data-view="vulnerabilidades" style="display:none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                        <line x1="12" y1="9" x2="12" y2="13"></line>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    <span>Vulnerabilidades</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="security-badge-small">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    <span>Conexión segura</span>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <div id="message-container"></div>
+            
+            <!-- Vista: Gestión de Activos -->
+            <div id="view-activos" class="content-view active">
+                <div class="content-header">
+                    <h1>Gestión de Activos IT</h1>
+                    <button class="btn btn-primary admin-only" id="btn-new-asset" style="display:none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        <span>Nuevo Activo</span>
+                    </button>
+                </div>
+                
+                <!-- Filtros -->
+                <div class="filters-container">
+                    <div class="filter-group">
+                        <label for="filter-type">Tipo de Activo</label>
+                        <select id="filter-type">
+                            <option value="">Todos</option>
+                            <option value="sensor">Sensor IoT</option>
+                            <option value="server">Servidor</option>
+                            <option value="workstation">Estación de Trabajo</option>
+                            <option value="network_device">Dispositivo de Red</option>
+                            <option value="application">Aplicación</option>
+                            <option value="database">Base de Datos</option>
+                            <option value="mobile_device">Dispositivo Móvil</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="filter-status">Estado</label>
+                        <select id="filter-status">
+                            <option value="">Todos</option>
+                            <option value="active">Activo</option>
+                            <option value="inactive">Inactivo</option>
+                            <option value="maintenance">Mantenimiento</option>
+                            <option value="decommissioned">Fuera de Servicio</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="filter-risk">Nivel de Riesgo</label>
+                        <select id="filter-risk">
+                            <option value="">Todos</option>
+                            <option value="low">Bajo</option>
+                            <option value="medium">Medio</option>
+                            <option value="high">Alto</option>
+                            <option value="critical">Crítico</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="filter-search">Buscar</label>
+                        <input type="text" id="filter-search" placeholder="Nombre o hostname...">
+                    </div>
+                    
+                    <button class="btn btn-primary" id="btn-apply-filters">Aplicar Filtros</button>
+                </div>
+                
+                <!-- Tabla de activos -->
+                <div class="table-container">
+                    <table class="assets-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Tipo</th>
+                                <th>IP / Hostname</th>
+                                <th>Ubicación</th>
+                                <th>Estado</th>
+                                <th>Riesgo</th>
+                                <th>Propietario</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="assets-table-body">
+                            <tr>
+                                <td colspan="8" class="loading">Cargando activos...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Vista: Estadísticas -->
+            <div id="view-estadisticas" class="content-view">
+                <div class="content-header">
+                    <h1>Estadísticas de Activos</h1>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">💻</div>
+                        <div class="stat-content">
+                            <h3 class="stat-value" id="stat-total-assets">0</h3>
+                            <p class="stat-label">Total de Activos</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-content">
+                            <h3 class="stat-value" id="stat-active-assets">0</h3>
+                            <p class="stat-label">Activos Activos</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">⚠️</div>
+                        <div class="stat-content">
+                            <h3 class="stat-value" id="stat-critical-assets">0</h3>
+                            <p class="stat-label">Activos Críticos</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Distribución por Tipo de Activo</h3>
+                    <div id="chart-by-type" class="chart-bars"></div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Distribución por Estado</h3>
+                    <div id="chart-by-status" class="chart-bars"></div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Distribución por Nivel de Riesgo</h3>
+                    <div id="chart-by-risk" class="chart-bars"></div>
+                </div>
+            </div>
+            
+            <!-- Vista: Usuarios (solo admin) -->
+            <div id="view-usuarios" class="content-view">
+                <div class="content-header">
+                    <h1>Gestión de Usuarios</h1>
+                </div>
+                
+                <div id="users-container">
+                    <div class="loading">Cargando usuarios...</div>
+                </div>
+            </div>
+
+            <div id="view-vulnerabilidades" class="content-view">
+                <div class="content-header">
+                    <h1>Gestión de Vulnerabilidades</h1>
+                    <button class="btn btn-primary admin-only" id="btn-new-vuln" style="display:none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        <span>Nueva Vulnerabilidad</span>
+                    </button>
+                </div>
+
+            <!-- Filtros -->
+                <div class="filters-container">
+                    <div class="filter-group">
+                        <label for="filter-vuln-severity">Severidad</label>
+                        <select id="filter-vuln-severity">
+                            <option value="">Todas</option>
+                            <option value="critical">Crítico</option>
+                            <option value="high">Alto</option>
+                            <option value="medium">Medio</option>
+                            <option value="low">Bajo</option>
+                        </select>
+                    </div>
+        
+                <div class="filter-group">
+                    <label for="filter-vuln-search">Buscar (CVE/Título)</label>
+                    <input type="text" id="filter-vuln-search" placeholder="CVE-2024-...">
+                </div>
+        
+                <button class="btn btn-primary" id="btn-apply-vuln-filters">Aplicar Filtros</button>
+            </div>
+    
+            <!-- Tabla de vulnerabilidades -->
+            <div class="table-container">
+                <table class="vulns-table">
+                    <thead>
+                        <tr>
+                            <th>CVE ID</th>
+                            <th>Título</th>
+                            <th>Severidad</th>
+                            <th>Descripción</th>
+                            <th>Enlaces</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="vulns-table-body">
+                        <tr>
+                            <td colspan="6" class="loading">Cargando vulnerabilidades...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </main>
+    </div>
+
+    <!-- Modal: Nuevo/Editar Activo -->
+    <div id="asset-modal" class="modal">
+        <div class="modal-content">
+            <h3 id="asset-modal-title">Nuevo Activo</h3>
+            <form id="asset-form">
+                <input type="hidden" id="asset-id">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="asset-name">Nombre *</label>
+                        <input type="text" id="asset-name" required maxlength="100" placeholder="Ej: Server-Prod-01">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="asset-type">Tipo *</label>
+                        <select id="asset-type" required>
+                            <option value="sensor">Sensor IoT</option>
+                            <option value="server">Servidor</option>
+                            <option value="workstation">Estación de Trabajo</option>
+                            <option value="network_device">Dispositivo de Red</option>
+                            <option value="application">Aplicación</option>
+                            <option value="database">Base de Datos</option>
+                            <option value="mobile_device">Dispositivo Móvil</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="asset-description">Descripción</label>
+                    <textarea id="asset-description" rows="3" maxlength="500" placeholder="Descripción del activo..."></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="asset-ip">Dirección IP</label>
+                        <input type="text" id="asset-ip" maxlength="45" placeholder="192.168.1.100">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="asset-hostname">Hostname</label>
+                        <input type="text" id="asset-hostname" maxlength="255" placeholder="server01.local">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="asset-os">Sistema Operativo</label>
+                        <input type="text" id="asset-os" maxlength="100" placeholder="Ubuntu 22.04 LTS">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="asset-location">Ubicación</label>
+                        <input type="text" id="asset-location" maxlength="200" placeholder="Datacenter A - Rack 05">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="asset-status">Estado</label>
+                        <select id="asset-status">
+                            <option value="active">Activo</option>
+                            <option value="inactive">Inactivo</option>
+                            <option value="maintenance">Mantenimiento</option>
+                            <option value="decommissioned">Fuera de Servicio</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="asset-risk">Nivel de Riesgo</label>
+                        <select id="asset-risk">
+                            <option value="low">Bajo</option>
+                            <option value="medium">Medio</option>
+                            <option value="high">Alto</option>
+                            <option value="critical">Crítico</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="modal-buttons">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-secondary" id="btn-cancel-asset">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Confirmación de Eliminación -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content modal-small">
+            <h3>Confirmar Eliminación</h3>
+            <p id="confirm-message"></p>
+            <div class="modal-buttons">
+                <button id="btn-confirm-yes" class="btn btn-danger">Sí, eliminar</button>
+                <button id="btn-confirm-no" class="btn btn-secondary">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="chart-modal" class="modal">
+    <div class="modal-content modal-large"> <h3 id="chart-modal-title">Historial del Sensor</h3>
+        <p id="chart-modal-desc"></p>
+        
+        <div class="chart-container" style="position: relative; height:300px; width:100%">
+            <canvas id="sensorHistoryChart"></canvas>
+        </div>
+        
+        <div class="modal-buttons">
+            <button type="button" class="btn btn-secondary" onclick="closeChartModal()">Cerrar</button>
+        </div>
+    </div>
+    </div>
+    
+    <script src="js/utils.js"></script>
+    <script src="js/dashboard.js"></script>
+
+    <!-- Modal: Nueva Vulnerabilidad -->
+    <div id="vuln-modal" class="modal">
+        <div class="modal-content">
+            <h3 id="vuln-modal-title">Nueva Vulnerabilidad</h3>
+            <form id="vuln-form">
+                <div class="form-group">
+                    <label for="vuln-cve">CVE ID *</label>
+                    <input type="text" id="vuln-cve" required placeholder="CVE-2024-12345" 
+                        pattern="CVE-\d{4}-\d{4,}" title="Formato: CVE-YYYY-NNNN">
+                </div>
+            
+                <div class="form-group">
+                    <label for="vuln-title">Título *</label>
+                    <input type="text" id="vuln-title" required maxlength="200" 
+                           placeholder="Descripción breve de la vulnerabilidad">
+                </div>
+            
+                <div class="form-group">
+                    <label for="vuln-description">Descripción</label>
+                    <textarea id="vuln-description" rows="4" maxlength="1000" 
+                              placeholder="Descripción detallada de la vulnerabilidad..."></textarea>
+                </div>
+            
+                <div class="form-group">
+                    <label for="vuln-severity">Severidad *</label>
+                    <select id="vuln-severity" required>
+                        <option value="low">Bajo</option>
+                        <option value="medium">Medio</option>
+                        <option value="high">Alto</option>
+                        <option value="critical">Crítico</option>
+                    </select>
+                </div>
+            
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="vuln-cve-url">URL CVE</label>
+                        <input type="url" id="vuln-cve-url" placeholder="https://cve.mitre.org/...">
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="vuln-nvd-url">URL NVD</label>
+                        <input type="url" id="vuln-nvd-url" placeholder="https://nvd.nist.gov/...">
+                    </div>
+                </div>
+            
+                <div class="modal-buttons">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-secondary" id="btn-cancel-vuln">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Vincular Vulnerabilidad -->
+    <div id="link-vuln-modal" class="modal">
+        <div class="modal-content">
+            <h3 id="link-vuln-title">Vincular Vulnerabilidad</h3>
+        
+            <div class="form-group">
+                <label for="asset-select">Seleccionar Activo</label>
+                <select id="asset-select" class="asset-select">
+                    <option value="">Cargando activos...</option>
+                </select>
+            </div>
+        
+            <div class="modal-buttons">
+                <button type="button" class="btn btn-primary" id="btn-link-vuln">Vincular</button>
+                <button type="button" class="btn btn-secondary" id="btn-cancel-link">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/vulnerabilities.js"></script>
+</body>
+</html>
